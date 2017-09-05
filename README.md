@@ -4,7 +4,7 @@ A command line tool that converts input characters into a form that can be used 
 # Instllation
 
 ```
-$ go get https://github.com/ryonakao/domainify.git
+$ go get github.com/ryonakao/domainify
 ```
 
 # Usage
