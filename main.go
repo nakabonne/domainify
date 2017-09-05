@@ -6,6 +6,7 @@ import (
 	"os"
 	"strings"
 	"time"
+	"unicode"
 )
 
 var tlds = []string{"com", "net"}
@@ -17,5 +18,11 @@ func main() {
 	s := bufio.NewScanner(os.Stdin)
 	for s.Scan() {
 		text := strings.ToLower(s.Text())
+		var newText []rune
+		for _, r := range text {
+			if unicode.IsSpace(r) {
+				r = '-'
+			}
+		}
 	}
 }
