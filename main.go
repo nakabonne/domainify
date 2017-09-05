@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"fmt"
 	"math/rand"
 	"os"
 	"strings"
@@ -23,6 +24,11 @@ func main() {
 			if unicode.IsSpace(r) {
 				r = '-'
 			}
+			if !strings.ContainsRune(allowedChars, r) {
+				continue
+			}
+			newText = append(newText, r)
 		}
+		fmt.Println(string(newText) + "." + tlds[rand.Intn(len(tlds))])
 	}
 }
